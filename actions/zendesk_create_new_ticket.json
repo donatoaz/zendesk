@@ -1,0 +1,53 @@
+{
+	"name": {
+    "pt_BR": "criar um novo ticket no Zendesk",
+    "en": "create a new ticket in Zendesk"
+  },
+  "action_key": "create_ticket",
+  "description": {
+    "pt_BR": "criar um novo ticket no Zendesk",
+    "en": "create a new ticket in Zendesk"
+  },
+  "action_fields": {
+  	"fields": [
+      {
+      	"key": "ticket.subject",
+        "name": {"pt_BR": "assunto", "en": "subject"},
+        "description": {
+        	"pt_BR": "O assunto do ticket",
+          "en": "The ticket subject"
+        },
+        "label": {
+          "pt_BR": "Digite o assunto",
+          "en": "Type the subject"
+        },
+        "required": false,
+        "visible": true,
+        "advanced": false,
+        "field_type": "string",
+        "data_type": "string"
+      },
+      {
+      	"key": "ticket.comment",
+        "name": {"pt_BR": "comentário", "en": "comment"},
+        "description": {
+        	"pt_BR": "O comentário",
+          "en": "The comment"
+        },
+        "label": {
+          "pt_BR": "Digite o comentário",
+          "en": "Type the comment"
+        },
+        "required": true,
+        "visible": true,
+        "advanced": false,
+        "field_type": "string",
+        "data_type": "string"
+      },
+    ]
+  },
+  "request": {
+  	"method_name": "/tickets.json",
+    "json_api": true
+  }
+}
