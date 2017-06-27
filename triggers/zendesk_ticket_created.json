@@ -1,0 +1,66 @@
+{
+	"name": {
+  	"pt_BR": "novo ticket criado",
+    "en",: "new ticket created"
+  },
+  "trigger_key": "new_ticket",
+  "description": {
+  	"pt_br": "Para cada novo ticket criado",
+    "en": "For each new created ticket"
+  },
+  // Não aprendi a usar
+  "filters": [
+  	[{"field": "status",
+      "condition": "equal",
+      "value": "paid"
+    }]
+  ],
+  // Não aprendi a usar
+  "trigger_fields": {
+    "type": "local",
+    "fields": [
+      {"key": "status",
+       "name": {
+       		"pt_BR": "status",
+         	"en": "status"
+       },
+       "description": {
+        	"pt_BR": "status do pagamento",
+         	"en": "payment status"
+       },
+       "field_type": "string"
+      }
+    ]
+  },
+  "trigger_type": "rest_hook",
+  "webhook": {
+    "message_type": "object",
+    "event_filter": {
+      "type": "header"
+      "field": "X-BoletoSimples-Event",
+      "events": ["bank_billet.*", "bank_billet.generated"]
+    },
+    "idempotent": [
+      {
+        "type": "header",
+        "field": "X-Boletosimples-Delivery-Id"
+      }
+    ],
+    "rest_hook_config": {
+      "create": {
+        "verb": "POST",
+        "method_name": "/api/v1/webhooks",
+        "params": {"events": ["bank_billet.*"]}
+      },
+      "delete": {
+        "verb": "DELETE",
+        "method_name": "/api/v1/webhooks/{id}"
+      },
+      "meta_params": {
+        "webhook_id": "id",
+        "webhook_url": "url"
+      }
+    }
+  }
+
+}

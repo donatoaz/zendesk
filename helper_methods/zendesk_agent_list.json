@@ -1,0 +1,19 @@
+{
+  "name": "lista dos agentes",
+  "helper_method_key": "zendesk_agent_list",
+  "requests": [
+  	{
+      "method_name": "/users.json",
+      "response_field": "data",
+      "params": {},
+        "mapping": {
+        "label": {
+          "fields": ["name"]
+        },
+        "value": {
+          "field": "id"
+        }
+      }
+    }
+  ]
+}
