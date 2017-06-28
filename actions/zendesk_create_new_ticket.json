@@ -17,10 +17,6 @@
         	"pt_BR": "O assunto do ticket",
           "en": "The ticket subject"
         },
-        "label": {
-          "pt_BR": "Digite o assunto",
-          "en": "Type the subject"
-        },
         "required": false,
         "visible": true,
         "advanced": false,
@@ -34,16 +30,92 @@
         	"pt_BR": "O comentário",
           "en": "The comment"
         },
-        "label": {
-          "pt_BR": "Digite o comentário",
-          "en": "Type the comment"
-        },
         "required": true,
         "visible": true,
         "advanced": false,
         "field_type": "string",
         "data_type": "string"
       },
+			{
+      	"key": "ticket.type",
+        "name": {"pt_BR": "tipo", "en": "type"},
+        "description": {
+        	"pt_BR": "O tipo",
+          "en": "The type"
+        },
+        "label": {
+          "pt_BR": "Selecione o tipo",
+          "en": "Select the type"
+        },
+        "required": false,
+        "visible": true,
+        "advanced": false,
+        "field_type": "dropdown",
+        "data_type": "string",
+				"list": {
+					"type": "local",
+					"data": [
+						{"label": "Pergunta", "value": "question"},
+						{"label": "Incidente", "value": "incident"},
+			    	{"label": "Problema", "value": "problem"},
+						{"label": "Tarefa", "value": "task"}
+			  	]
+				}
+      },
+			{
+      	"key": "ticket.priority",
+        "name": {"pt_BR": "prioridade", "en": "priority"},
+        "description": {
+        	"pt_BR": "A prioridade",
+          "en": "The priority"
+        },
+        "label": {
+          "pt_BR": "Selecione a prioridade",
+          "en": "Select the priority"
+        },
+        "required": false,
+        "visible": true,
+        "advanced": false,
+        "field_type": "dropdown",
+				"data_type": "string",
+				"list": {
+					"type": "local",
+					"data": [
+						{"label": "Baixa", "value": "low"},
+						{"label": "Normal", "value": "normal"},
+						{"label": "Alta", "value": "high"},
+						{"label": "Urgente", "value": "urgent"}
+			  	]
+				}
+      },
+			{
+      	"key": "ticket.status",
+        "name": {"pt_BR": "status", "en": "status"},
+        "description": {
+        	"pt_BR": "O status",
+          "en": "The status"
+        },
+        "label": {
+          "pt_BR": "Selecione o status",
+          "en": "Select the status"
+        },
+        "required": false,
+        "visible": true,
+        "advanced": false,
+        "field_type": "dropdown",
+				"data_type": "string",
+				"list": {
+					"type": "local",
+					"data": [
+						{"label": "Novo", "value": "new"},
+						{"label": "Aberto", "value": "open"},
+						{"label": "Pendente", "value": "pending"},
+						{"label": "Em espera", "value": "hold"},
+						{"label": "Resolvido", "value": "solved"},
+						{"label": "Fechado", "value": "closed"}
+			  	]
+				}
+      }
     ]
   },
   "request": {
