@@ -6,7 +6,7 @@
       "method_name": "/users.json",
       "response_field": "data",
       "params": {},
-        "mapping": {
+      "mapping": {
         "label": {
           "fields": ["name"]
         },

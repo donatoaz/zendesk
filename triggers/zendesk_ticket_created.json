@@ -1,7 +1,7 @@
 {
 	"name": {
   	"pt_BR": "novo ticket criado",
-    "en",: "new ticket created"
+    "en": "new ticket created"
   },
   "trigger_key": "new_ticket",
   "description": {
@@ -10,25 +10,29 @@
   },
   // Não aprendi a usar
   "filters": [
-  	[{"field": "status",
-      "condition": "equal",
-      "value": "paid"
-    }]
+  	[
+      {
+        "field": "status",
+        "condition": "equal",
+        "value": "paid"
+      }
+    ]
   ],
   // Não aprendi a usar
   "trigger_fields": {
     "type": "local",
     "fields": [
-      {"key": "status",
-       "name": {
+      {
+        "key": "status",
+        "name": {
        		"pt_BR": "status",
          	"en": "status"
-       },
-       "description": {
+        },
+        "description": {
         	"pt_BR": "status do pagamento",
          	"en": "payment status"
-       },
-       "field_type": "string"
+        },
+        "field_type": "string"
       }
     ]
   },
@@ -36,7 +40,7 @@
   "webhook": {
     "message_type": "object",
     "event_filter": {
-      "type": "header"
+      "type": "header",
       "field": "X-BoletoSimples-Event",
       "events": ["bank_billet.*", "bank_billet.generated"]
     },
