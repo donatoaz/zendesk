@@ -7,28 +7,39 @@
     "en": "The Zendesk family of products work together to help you improve customer relationships."
 	},
   "website": "https://www.zendesk.com.br",
-  "signup_url": "https://www.zendesk.com.br/register/",
+  "signup_url": "https://www.zendesk.com.br/register",
   "api_base_uri": {
     "production": {
-			"uri": "https://raphaelabreu.zendesk.com/api/v2/",
+			"uri": "https://{subdomain}.zendesk.com/api/v2",
 			"label": "Produção",
 			"default": true
 		}
   },
   "authentication": {
-    "type": "oauth_2",
-    "oauth_access_fields": {
-      "client_id": "client_id_para_a_pluga",
-			"client_secret": "client_secret_para_a_pluga",
-      "authorize_url": "https://raphaelabreu.zendesk.com/oauth/authorizations/new",
-      "access_token_url": "https://raphaelabreu.zendesk.com/oauth/tokens",
-      "redirect_uri": "https://manage.pluga.co/oauth2/zendesk",
-      "access_token_placement": "header_bearer",
-      "scope": ["read", "write"],
-      "response_type": "code"
-    },
+    "type": "basic_auth",
+    "basic_auth_format": "{username}/token:{password}",
+    "fields": [
+      {
+        "name": "subdomain",
+        "label": "Subdomínio",
+        "type": "text"
+      },
+      {
+        "name": "email",
+        "label": "Email",
+        "mapping": "username",
+        "type": "email"
+      },
+      {
+        "name": "token",
+        "label": "Token",
+        "mapping": "password",
+        "type": "text"
+      }
+    ],
     "ping_request": {
-    	"method_name": "/users.json"
+    	"method_name": "/users.json",
+      "params": { "per_page": 1 }
   	}
   }
 }

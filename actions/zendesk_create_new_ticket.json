@@ -12,7 +12,7 @@
   	"fields": [
       {
       	"key": "ticket.subject",
-        "name": {"pt_BR": "assunto", "en": "subject"},
+        "name": { "pt_BR": "assunto", "en": "subject" },
         "description": {
         	"pt_BR": "O assunto do ticket",
           "en": "The ticket subject"
@@ -25,7 +25,7 @@
       },
       {
       	"key": "ticket.comment",
-        "name": {"pt_BR": "comentário", "en": "comment"},
+        "name": { "pt_BR": "comentário", "en": "comment" },
         "description": {
         	"pt_BR": "O comentário",
           "en": "The comment"
@@ -38,7 +38,7 @@
       },
 			{
       	"key": "ticket.type",
-        "name": {"pt_BR": "tipo", "en": "type"},
+        "name": { "pt_BR": "tipo", "en": "type" },
         "description": {
         	"pt_BR": "O tipo",
           "en": "The type"
@@ -55,16 +55,16 @@
 				"list": {
 					"type": "local",
 					"data": [
-						{"label": "Pergunta", "value": "question"},
-						{"label": "Incidente", "value": "incident"},
-			    	{"label": "Problema", "value": "problem"},
-						{"label": "Tarefa", "value": "task"}
+						{ "label": "Pergunta", "value": "question" },
+						{ "label": "Incidente", "value": "incident" },
+			    	{ "label": "Problema", "value": "problem" },
+						{ "label": "Tarefa", "value": "task" }
 			  	]
 				}
       },
 			{
       	"key": "ticket.priority",
-        "name": {"pt_BR": "prioridade", "en": "priority"},
+        "name": { "pt_BR": "prioridade", "en": "priority" },
         "description": {
         	"pt_BR": "A prioridade",
           "en": "The priority"
@@ -81,16 +81,16 @@
 				"list": {
 					"type": "local",
 					"data": [
-						{"label": "Baixa", "value": "low"},
-						{"label": "Normal", "value": "normal"},
-						{"label": "Alta", "value": "high"},
-						{"label": "Urgente", "value": "urgent"}
+						{ "label": "Baixa", "value": "low" },
+						{ "label": "Normal", "value": "normal" },
+						{ "label": "Alta", "value": "high" },
+						{ "label": "Urgente", "value": "urgent" }
 			  	]
 				}
       },
 			{
       	"key": "ticket.status",
-        "name": {"pt_BR": "status", "en": "status"},
+        "name": { "pt_BR": "status", "en": "status" },
         "description": {
         	"pt_BR": "O status",
           "en": "The status"
@@ -107,12 +107,12 @@
 				"list": {
 					"type": "local",
 					"data": [
-						{"label": "Novo", "value": "new"},
-						{"label": "Aberto", "value": "open"},
-						{"label": "Pendente", "value": "pending"},
-						{"label": "Em espera", "value": "hold"},
-						{"label": "Resolvido", "value": "solved"},
-						{"label": "Fechado", "value": "closed"}
+						{ "label": "Novo", "value": "new" },
+						{ "label": "Aberto", "value": "open" },
+						{ "label": "Pendente", "value": "pending" },
+						{ "label": "Em espera", "value": "hold" },
+						{ "label": "Resolvido", "value": "solved" },
+						{ "label": "Fechado", "value": "closed" }
 			  	]
 				}
       }
