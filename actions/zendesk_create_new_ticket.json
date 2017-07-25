@@ -20,7 +20,7 @@
         "required": false,
         "visible": true,
         "advanced": false,
-        "field_type": "string",
+        "field_type": "custom",
         "data_type": "string"
       },
       {
@@ -33,7 +33,7 @@
         "required": true,
         "visible": true,
         "advanced": false,
-        "field_type": "string",
+        "field_type": "custom",
         "data_type": "string"
       },
 			{
