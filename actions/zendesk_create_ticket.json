@@ -11,6 +11,31 @@
   "action_fields": {
   	"fields": [
       {
+        "key": "ticket.assignee_id",
+        "name": { "pt_BR": "Atribuído", "en": "Assignee" },
+        "description": {
+          "pt_BR": "Agente atribuído ao ticket",
+          "en": "Ticket's assigned agent"
+        },
+        "label": {
+          "pt_BR": "Atribuído",
+          "en": "Assignee"
+        },
+        "required": false,
+        "visible": true,
+        "advanced": false,
+        "field_type": "dropdown",
+        "data_type": "integer",
+        "list": {
+          "type": "remote",
+          "helper_method": "zendesk_agent_list"
+        },
+        "placeholder": {
+          "pt_BR": "Selecione um agente",
+          "en": "Select a agent"
+        }
+      },
+      {
       	"key": "ticket.subject",
         "name": { "pt_BR": "assunto", "en": "subject" },
         "description": {
@@ -24,7 +49,7 @@
         "data_type": "string"
       },
       {
-      	"key": "ticket.comment",
+      	"key": "ticket.comment.body",
         "name": { "pt_BR": "comentário", "en": "comment" },
         "description": {
         	"pt_BR": "O comentário",
@@ -49,7 +74,7 @@
         },
         "required": false,
         "visible": true,
-        "advanced": false,
+        "advanced": true,
         "field_type": "dropdown",
         "data_type": "string",
 				"list": {
@@ -60,7 +85,8 @@
 			    	{ "label": "Problema", "value": "problem" },
 						{ "label": "Tarefa", "value": "task" }
 			  	]
-				}
+				},
+        "placeholder": { "pt_BR": "-", "en": "-" }
       },
 			{
       	"key": "ticket.priority",
@@ -75,7 +101,7 @@
         },
         "required": false,
         "visible": true,
-        "advanced": false,
+        "advanced": true,
         "field_type": "dropdown",
 				"data_type": "string",
 				"list": {
@@ -86,7 +112,8 @@
 						{ "label": "Alta", "value": "high" },
 						{ "label": "Urgente", "value": "urgent" }
 			  	]
-				}
+				},
+        "placeholder": { "pt_BR": "-", "en": "-" }
       },
 			{
       	"key": "ticket.status",
@@ -101,7 +128,7 @@
         },
         "required": false,
         "visible": true,
-        "advanced": false,
+        "advanced": true,
         "field_type": "dropdown",
 				"data_type": "string",
 				"list": {
@@ -114,7 +141,11 @@
 						{ "label": "Resolvido", "value": "solved" },
 						{ "label": "Fechado", "value": "closed" }
 			  	]
-				}
+				},
+        "placeholder": {
+          "pt_BR": "Novo",
+          "en": "new"
+        }
       }
     ]
   },

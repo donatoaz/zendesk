@@ -4,15 +4,14 @@
   "requests": [
   	{
       "method_name": "/users.json",
-      "response_field": "data",
-      "params": {},
+      "response_field": "users",
+      "params": {
+        "per_page": 100,
+        "role": "admin"
+      },
       "mapping": {
-        "label": {
-          "fields": ["name"]
-        },
-        "value": {
-          "field": "id"
-        }
+        "label": { "fields": ["name"] },
+        "value": { "field": "id" }
       }
     }
   ]
