@@ -1,0 +1,72 @@
+{
+  "name": {
+    "pt_BR": "novo usuário criado",
+    "en": "new user created"
+  },
+  "trigger_key": "user_created",
+  "description": {
+    "pt_BR": "A cada novo usuário criado",
+    "en": "For each new user created"
+  },
+  "trigger_fields": {
+    "type": "local",
+    "fields": [
+      {
+        "key": "name",
+        "name": {
+          "pt_BR": "Nome",
+          "en": "Name"
+        },
+        "description": {
+          "pt_BR": "Nome do usuário",
+          "en": "User name"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "email",
+        "name": {
+          "pt_BR": "Email",
+          "en": "Email"
+        },
+        "description": {
+          "pt_BR": "Email do usuário",
+          "en": "User email"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "phone",
+        "name": {
+          "pt_BR": "Telefone",
+          "en": "Phone"
+        },
+        "description": {
+          "pt_BR": "Telefone do usuário",
+          "en": "User phone"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "created_at",
+        "name": {
+          "pt_BR": "Data/hora de criação",
+          "en": "Cretion datetime"
+        },
+        "description": {
+          "pt_BR": "Data e hora de criação do usuário",
+          "en": "User creation datetime"
+        },
+        "field_type": "datetime"
+      }
+    ]
+  },
+  "trigger_type": "polling",
+  "request": {
+    "method_name": "/search.json",
+    "params": {
+      "query": "type:user role:end-user created>{base_datetime_filter}"
+    }
+  },
+  "response_field": "results"
+}
