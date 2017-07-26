@@ -11,6 +11,66 @@
   "action_fields": {
   	"fields": [
       {
+      	"key": "ticket.subject",
+        "name": { "pt_BR": "assunto", "en": "subject" },
+        "description": {
+        	"pt_BR": "O assunto do ticket",
+          "en": "The ticket subject"
+        },
+        "required": true,
+        "visible": true,
+        "advanced": false,
+        "field_type": "custom",
+        "data_type": "string"
+      },
+      {
+        "key": "requester.name",
+        "name": {
+          "pt_BR": "Nome do solicitante",
+          "en": "Requester name"
+        },
+        "description": {
+          "pt_BR": "Nome do solicitante do ticket",
+          "en": "Ticket requester name"
+        },
+        "required": true,
+        "visible": true,
+        "advanced": false,
+        "field_type": "custom",
+        "data_type": "string",
+        "not_include_field_in_request": true
+      },
+      {
+        "key": "requester.email",
+        "name": {
+          "pt_BR": "Email do solicitante",
+          "en": "Requester email"
+        },
+        "description": {
+          "pt_BR": "Email do solicitante do ticket",
+          "en": "Ticket requester email"
+        },
+        "required": true,
+        "visible": true,
+        "advanced": false,
+        "field_type": "custom",
+        "data_type": "string",
+        "not_include_field_in_request": true
+      },
+      {
+      	"key": "ticket.comment.body",
+        "name": { "pt_BR": "comentário", "en": "comment" },
+        "description": {
+        	"pt_BR": "O comentário",
+          "en": "The comment"
+        },
+        "required": true,
+        "visible": true,
+        "advanced": false,
+        "field_type": "custom_textarea",
+        "data_type": "string"
+      },
+      {
         "key": "ticket.assignee_id",
         "name": { "pt_BR": "Atribuído", "en": "Assignee" },
         "description": {
@@ -23,7 +83,7 @@
         },
         "required": false,
         "visible": true,
-        "advanced": false,
+        "advanced": true,
         "field_type": "dropdown",
         "data_type": "integer",
         "list": {
@@ -34,32 +94,6 @@
           "pt_BR": "Selecione um agente",
           "en": "Select a agent"
         }
-      },
-      {
-      	"key": "ticket.subject",
-        "name": { "pt_BR": "assunto", "en": "subject" },
-        "description": {
-        	"pt_BR": "O assunto do ticket",
-          "en": "The ticket subject"
-        },
-        "required": false,
-        "visible": true,
-        "advanced": false,
-        "field_type": "custom",
-        "data_type": "string"
-      },
-      {
-      	"key": "ticket.comment.body",
-        "name": { "pt_BR": "comentário", "en": "comment" },
-        "description": {
-        	"pt_BR": "O comentário",
-          "en": "The comment"
-        },
-        "required": true,
-        "visible": true,
-        "advanced": false,
-        "field_type": "custom",
-        "data_type": "string"
       },
 			{
       	"key": "ticket.type",
@@ -151,6 +185,31 @@
   },
   "request": {
   	"method_name": "/tickets.json",
-    "json_api": true
+    "json_api": true,
+    "error_fields": ["error", "description"],
+    "pre_hooks": {
+      "hooks": [
+        {
+          "name": "Create or update end user",
+          "request": {
+            "verb": "post",
+            "method_name": "/users/create_or_update.json",
+            "json_api": true,
+            "params": [
+              { "field": "user.name", "value": "{requester.name}" },
+              { "field": "user.email", "value": "{requester.email}" },
+              { "field": "user.verified", "value": true }
+            ]
+          }
+        }
+      ],
+      "append_fields": [
+        {
+          "field": "ticket.requester_id",
+          "value": "{user.id}",
+          "type": "integer"
+        }
+      ]
+    }
   }
 }
