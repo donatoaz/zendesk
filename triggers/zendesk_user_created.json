@@ -48,6 +48,18 @@
         "field_type": "string"
       },
       {
+        "key": "locale",
+        "name": {
+          "pt_BR": "Localidade",
+          "en": "Locale"
+        },
+        "description": {
+          "pt_BR": "Localidade do usuário",
+          "en": "User locale"
+        },
+        "field_type": "string"
+      },
+      {
         "key": "created_at",
         "name": {
           "pt_BR": "Data/hora de criação",

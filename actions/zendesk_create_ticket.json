@@ -61,8 +61,8 @@
       	"key": "ticket.comment.body",
         "name": { "pt_BR": "comentário", "en": "comment" },
         "description": {
-        	"pt_BR": "O comentário",
-          "en": "The comment"
+        	"pt_BR": "A mensagem que inicia o ticket",
+          "en": "The message that start's ticket"
         },
         "required": true,
         "visible": true,
