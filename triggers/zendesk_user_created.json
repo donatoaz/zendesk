@@ -70,7 +70,7 @@
           "en": "User creation datetime"
         },
         "field_type": "datetime",
-        "source": "format_date(source[:created_at],'%d/%m/%Y %H:%M:%S')"
+        "source": "format_date(source[:created_at], %q(%d/%m/%Y %H:%M:%S))"
       }
     ]
   },

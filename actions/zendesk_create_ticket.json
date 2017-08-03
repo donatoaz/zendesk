@@ -59,7 +59,7 @@
       },
       {
       	"key": "ticket.comment.body",
-        "name": { "pt_BR": "comentário", "en": "comment" },
+        "name": { "pt_BR": "descrição", "en": "description" },
         "description": {
         	"pt_BR": "A mensagem que inicia o ticket",
           "en": "The message that start's ticket"

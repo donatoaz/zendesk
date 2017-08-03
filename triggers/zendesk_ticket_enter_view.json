@@ -10,28 +10,117 @@
   },
   "trigger_fields": {
     "type": "local",
-    "fields": []
+    "fields": [
+      {
+        "key": "id",
+        "name": {
+          "pt_BR": "id",
+          "en": "id"
+        },
+        "description": {
+          "pt_BR": "#id do ticket",
+          "en": "Ticket #id"
+        },
+        "field_type": "integer"
+      },
+      {
+        "key": "type",
+        "name": {
+          "pt_BR": "Tipo",
+          "en": "Type"
+        },
+        "description": {
+          "pt_BR": "Tipo do ticket. ex: problem",
+          "en": "Ticket type. eg: problem"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "subject",
+        "name": {
+          "pt_BR": "Assunto",
+          "en": "Subject"
+        },
+        "description": {
+          "pt_BR": "Assunto/Título do ticket",
+          "en": "Ticket subject/title"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "description",
+        "name": {
+          "pt_BR": "Descrição",
+          "en": "Description"
+        },
+        "description": {
+          "pt_BR": "O primeiro comentário do ticket",
+          "en": "The first comment on the ticket"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "priority",
+        "name": {
+          "pt_BR": "Prioridade",
+          "en": "Priority"
+        },
+        "description": {
+          "pt_BR": "Prioridade do ticket. ex: urgent",
+          "en": "Ticket priority. eg: urgent"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "status",
+        "name": {
+          "pt_BR": "Status",
+          "en": "Status"
+        },
+        "description": {
+          "pt_BR": "Status do ticket. ex: pending",
+          "en": "Ticket status. eg: pending"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "tags",
+        "name": {
+          "pt_BR": "Tags",
+          "en": "Tags"
+        },
+        "description": {
+          "pt_BR": "Tags do ticket",
+          "en": "Ticket tags"
+        },
+        "field_type": "string",
+        "source": "source[:tags].join(%q(, ))"
+      }
+    ]
   },
   "trigger_type": "polling",
-  "base_datetime_filter": {},
+  "base_datetime_filter": {
+    "field": "created_at",
+    "format": "%Y-%m-%dT%H:%M:%S%:z"
+  },
   "configuration_fields": [
     {
       "key": "view_id",
       "name": {
-        "pt_BR": "",
-        "en": ""
+        "pt_BR": "Visualização",
+        "en": "View"
       },
       "label": {
-        "pt_BR": "",
-        "en": ""
+        "pt_BR": "Selecione uma visualização",
+        "en": "Select a view"
       },
       "placeholder": {
-        "pt_BR": "",
-        "en": ""
+        "pt_BR": "Sua visualização",
+        "en": "Your view"
       },
       "description": {
-        "pt_BR": "",
-        "en": ""
+        "pt_BR": "A visualização de tickets do Zendesk",
+        "en": "The Zendesk tickets view"
       },
       "required": true,
       "visible": true,
