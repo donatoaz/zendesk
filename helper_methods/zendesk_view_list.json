@@ -1,0 +1,21 @@
+{
+  "name": "lista das visualizações",
+  "helper_method_key": "zendesk_view_list",
+  "requests": [
+    {
+      "method_name": "/views/active.json",
+      "response_field": "views",
+      "params": {
+        "per_page": 100
+      },
+      "mapping": {
+        "label": {
+          "fields": ["title"]
+        },
+        "value": {
+          "field": "id"
+        }
+      }
+    }
+  ]
+}

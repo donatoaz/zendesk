@@ -6,8 +6,12 @@
       "method_name": "/users.json?per_page=100&role[]=admin&role[]=agent",
       "response_field": "users",
       "mapping": {
-        "label": { "fields": ["name"] },
-        "value": { "field": "id" }
+        "label": {
+          "fields": ["name"]
+        },
+        "value": {
+          "field": "id"
+        }
       }
     }
   ]

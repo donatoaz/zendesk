@@ -1,0 +1,53 @@
+{
+  "name": {
+    "pt_BR": "ticket inserido numa visualização",
+    "en": "ticket is added to a view"
+  },
+  "trigger_key": "ticket_enter_view",
+  "description": {
+    "pt_BR": "Quando um ticket for inserido em determinada visualização",
+    "en": "When a ticket is added to specific view"
+  },
+  "trigger_fields": {
+    "type": "local",
+    "fields": []
+  },
+  "trigger_type": "polling",
+  "base_datetime_filter": {},
+  "configuration_fields": [
+    {
+      "key": "view_id",
+      "name": {
+        "pt_BR": "",
+        "en": ""
+      },
+      "label": {
+        "pt_BR": "",
+        "en": ""
+      },
+      "placeholder": {
+        "pt_BR": "",
+        "en": ""
+      },
+      "description": {
+        "pt_BR": "",
+        "en": ""
+      },
+      "required": true,
+      "visible": true,
+      "field_type": "dropdown",
+      "list": {
+        "type": "remote",
+        "helper_method": "zendesk_view_list"
+      },
+      "data_type": "integer"
+    }
+  ],
+  "request": {
+    "method_name": "/views/{view_id}/tickets.json",
+    "params": {
+      "per_page": 100
+    },
+    "response_field": "tickets"
+  }
+}
