@@ -3,7 +3,7 @@
     "pt_BR": "ticket inserido numa visualização",
     "en": "ticket is inserted to a view"
   },
-  "trigger_key": "ticket_enter_view",
+  "trigger_key": "ticket_inserted_view",
   "description": {
     "pt_BR": "Quando um ticket for inserido em determinada visualização",
     "en": "When a ticket is inserted to specific view"
