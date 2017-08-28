@@ -99,10 +99,12 @@
     ]
   },
   "trigger_type": "polling",
-  "idempotent": {
-    "type": "body",
-    "field": "id"
-  },
+  "idempotent": [
+    {
+      "type": "body",
+      "field": "id"
+    }
+  ],
   "configuration_fields": [
     {
       "key": "view_id",
@@ -137,6 +139,9 @@
     "params": {
       "per_page": 100
     },
+    "extra_params": [
+      {"key": "view_id"}
+    ],
     "response_field": "tickets"
   }
 }
