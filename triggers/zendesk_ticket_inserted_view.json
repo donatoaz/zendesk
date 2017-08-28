@@ -95,6 +95,18 @@
         },
         "field_type": "string",
         "source": "source[:tags].join(%q(, ))"
+      },
+      {
+        "key": "created_at",
+        "name": {
+          "pt_BR": "Criação",
+          "en": "Creation"
+        },
+        "description": {
+          "pt_BR": "Data/hora de criação",
+          "en": "Creation date/time"
+        },
+        "field_type": "string"
       }
     ]
   },
