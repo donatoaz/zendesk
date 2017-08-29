@@ -154,6 +154,9 @@
     "extra_params": [
       {"key": "view_id"}
     ],
-    "response_field": "tickets"
+    "response_field": "tickets",
+    "additional_resources": [
+      {"name": "requester", "method": "/users/"}
+    ]
   }
 }
