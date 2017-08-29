@@ -1,12 +1,12 @@
 {
   "name": {
     "pt_BR": "ticket inserido numa visualização",
-    "en": "ticket is added to a view"
+    "en": "ticket is inserted to a view"
   },
-  "trigger_key": "ticket_enter_view",
+  "trigger_key": "ticket_inserted_view",
   "description": {
     "pt_BR": "Quando um ticket for inserido em determinada visualização",
-    "en": "When a ticket is added to specific view"
+    "en": "When a ticket is inserted to specific view"
   },
   "trigger_fields": {
     "type": "local",
@@ -95,14 +95,28 @@
         },
         "field_type": "string",
         "source": "source[:tags].join(%q(, ))"
+      },
+      {
+        "key": "created_at",
+        "name": {
+          "pt_BR": "Criação",
+          "en": "Creation"
+        },
+        "description": {
+          "pt_BR": "Data/hora de criação",
+          "en": "Creation date/time"
+        },
+        "field_type": "string"
       }
     ]
   },
   "trigger_type": "polling",
-  "base_datetime_filter": {
-    "field": "created_at",
-    "format": "%Y-%m-%dT%H:%M:%S%:z"
-  },
+  "idempotent": [
+    {
+      "type": "body",
+      "field": "id"
+    }
+  ],
   "configuration_fields": [
     {
       "key": "view_id",
@@ -137,6 +151,12 @@
     "params": {
       "per_page": 100
     },
-    "response_field": "tickets"
+    "extra_params": [
+      {"key": "view_id"}
+    ],
+    "response_field": "tickets",
+    "additional_resources": [
+      {"name": "requester", "method": "/users/"}
+    ]
   }
 }
