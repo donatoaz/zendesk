@@ -141,7 +141,8 @@
             "en": "https://manage.pluga.co/images/token-steps/zendesk/step7.png"
           }
         }
-      ],
+      ]
+    },
     "ping_request": {
     	"method_name": "/users.json",
       "params": { "per_page": 1 }
