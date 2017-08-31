@@ -97,16 +97,42 @@
         "source": "source[:tags].join(%q(, ))"
       },
       {
-        "key": "created_at",
+        "key": "url",
         "name": {
-          "pt_BR": "Criação",
-          "en": "Creation"
+          "pt_BR": "Link do ticket",
+          "en": "Ticket link"
         },
         "description": {
-          "pt_BR": "Data/hora de criação",
-          "en": "Creation date/time"
+          "pt_BR": "Url do ticket no painel do Zendesk",
+          "en": "Ticket url on Zendesk panel"
         },
         "field_type": "string"
+      },
+      {
+        "key": "created_at.date",
+        "name": {
+          "pt_BR": "Data de criação",
+          "en": "Creation date"
+        },
+        "description": {
+          "pt_BR": "Data de criação do ticket",
+          "en": "Ticket creation date"
+        },
+        "field_type": "datetime",
+        "source": "format_date(source[:created_at],%q(%d/%m/%Y))"
+      },
+      {
+        "key": "created_at.time",
+        "name": {
+          "pt_BR": "Hora de criação",
+          "en": "Creation time"
+        },
+        "description": {
+          "pt_BR": "Hora de criação do ticket",
+          "en": "Ticket creation time"
+        },
+        "field_type": "datetime",
+        "source": "format_date(source[:created_at],%q(%H:%M:%S))"
       }
     ]
   },
