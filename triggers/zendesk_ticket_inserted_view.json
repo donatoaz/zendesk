@@ -97,18 +97,6 @@
         "source": "source[:tags].join(%q(, ))"
       },
       {
-        "key": "url",
-        "name": {
-          "pt_BR": "Link do ticket",
-          "en": "Ticket link"
-        },
-        "description": {
-          "pt_BR": "Url do ticket no painel do Zendesk",
-          "en": "Ticket url on Zendesk panel"
-        },
-        "field_type": "string"
-      },
-      {
         "key": "created_at.date",
         "name": {
           "pt_BR": "Data de criação",
