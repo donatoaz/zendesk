@@ -121,6 +121,54 @@
         },
         "field_type": "datetime",
         "source": "format_date(source[:created_at],%q(%H:%M:%S))"
+      },
+      {
+        "key": "requester.name",
+        "name": {
+          "pt_BR": "Nome Solicitante",
+          "en": "Requester Name"
+        },
+        "description": {
+          "pt_BR": "Nome do solicitante do ticket",
+          "en": "Ticket's requester name"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "requester.email",
+        "name": {
+          "pt_BR": "Email Solicitante",
+          "en": "Requester Email"
+        },
+        "description": {
+          "pt_BR": "Email do solicitante do ticket",
+          "en": "Ticket's requester email"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "requester.phone",
+        "name": {
+          "pt_BR": "Telefone Solicitante",
+          "en": "Requester Phone"
+        },
+        "description": {
+          "pt_BR": "Telefone do solicitante do ticket",
+          "en": "Ticket's requester phone"
+        },
+        "field_type": "string"
+      },
+      {
+        "key": "requester.locale",
+        "name": {
+          "pt_BR": "Localidade Solicitante",
+          "en": "Requester Locale"
+        },
+        "description": {
+          "pt_BR": "Localidade do solicitante do ticket",
+          "en": "Ticket's requester locale"
+        },
+        "field_type": "string"
       }
     ]
   },
