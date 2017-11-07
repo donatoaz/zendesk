@@ -169,15 +169,24 @@
           "en": "Ticket's requester locale"
         },
         "field_type": "string"
+      },
+      {
+        "key": "organization.name",
+        "name": {
+          "pt_BR": "Nome Organização",
+          "en": "Organization name"
+        },
+        "description": {
+          "pt_BR": "Nome da organização do solicitante do ticket",
+          "en": "Ticket's requester organization name"
+        },
+        "field_type": "string"
       }
     ]
   },
   "trigger_type": "polling",
   "idempotent": [
-    {
-      "type": "body",
-      "field": "id"
-    }
+    {"type": "body", "field": "id"}
   ],
   "base_created_at_filter": {
     "field": "created_at",
@@ -215,14 +224,17 @@
   "request": {
     "method_name": "/views/{view_id}/tickets.json",
     "params": {
-      "per_page": 100
+      "per_page": 100,
+      "sort_by": "updated",
+      "sort_order": "desc"
     },
     "extra_params": [
       {"key": "view_id"}
     ],
     "response_field": "tickets",
     "additional_resources": [
-      {"name": "requester", "method": "/users/"}
+      {"name": "requester", "method": "/users/"},
+      {"name": "organization", "method": "/organizations/"}
     ]
   }
 }
