@@ -60,6 +60,19 @@
         "field_type": "string"
       },
       {
+        "key": "tags",
+        "name": {
+          "pt_BR": "Tags",
+          "en": "Tags"
+        },
+        "description": {
+          "pt_BR": "Tags do usuário",
+          "en": "User tags"
+        },
+        "field_type": "string",
+        "source": "source[:tags].join(%q(, ))"
+      },
+      {
         "key": "created_at",
         "name": {
           "pt_BR": "Data/hora de criação",
