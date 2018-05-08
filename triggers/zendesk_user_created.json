@@ -73,6 +73,18 @@
         "source": "source[:tags].join(%q(, ))"
       },
       {
+        "key": "organization.name",
+        "name": {
+          "pt_BR": "Nome Organização",
+          "en": "Organization name"
+        },
+        "description": {
+          "pt_BR": "Nome da organização do solicitante do ticket",
+          "en": "Ticket's requester organization name"
+        },
+        "field_type": "string"
+      },
+      {
         "key": "created_at",
         "name": {
           "pt_BR": "Data/hora de criação",
@@ -97,6 +109,13 @@
     "params": {
       "query": "type:user role:end-user created>{base_datetime_filter}"
     },
-    "response_field": "results"
+    "response_field": "results",
+    "additional_resources": [
+      {
+        "name": "organization",
+        "method": "/organizations/",
+        "response_field": "organization"
+      }
+    ]
   }
 }
